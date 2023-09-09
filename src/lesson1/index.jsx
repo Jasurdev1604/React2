@@ -4,7 +4,7 @@ class Index extends Component {
   render() {
     return (
       <>
-        <h1>Index</h1>
+        <h1>First react app</h1>
       </>
     );
   }
