@@ -1,11 +1,11 @@
-import { Component } from "react";
+import React, { Component } from "react";
 
 class Index extends Component {
   render() {
     return (
-      <>
-        <h1>First react app</h1>
-      </>
+      <React.StrictMode>
+        <h1>jasurbek</h1>
+      </React.StrictMode>
     );
   }
 }
