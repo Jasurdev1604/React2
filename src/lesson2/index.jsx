@@ -10,6 +10,7 @@ class Index extends React.Component {
           Jasurbek {title} {status || "none"}
         </h1>
         <p>{this.props?.data?.name}</p>
+        <h2>{this.props.children}</h2>
       </React.StrictMode>
     );
   }
