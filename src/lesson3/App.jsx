@@ -1,9 +1,15 @@
 import React from "react";
+import "./index.css";
 
-export const App = () => {
+export const App = (e) => {
+  const { img, title } = e.data;
+  console.log(img);
   return (
     <React.StrictMode>
-      <h1>App</h1>
+      {/* <div className="container">
+        <img src={img} alt="" />
+        <h3>{title}</h3>
+      </div> */}
     </React.StrictMode>
   );
 };
