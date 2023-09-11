@@ -1,9 +1,29 @@
-import React, { Component } from "react";
+import React, { Components } from "react";
 
-class index extends Component {
+class Index extends React.Component {
   render() {
-    return <div>index</div>;
+    const { title, status } = this.props;
+
+    return (
+      <React.StrictMode>
+        <h1>
+          Jasurbek {title} {status || "none"}
+        </h1>
+        <p>{this.props?.data?.name}</p>
+      </React.StrictMode>
+    );
   }
 }
 
-export default index;
+// class Student extends React.Component {
+//   render() {
+//     return (
+//       <React.StrictMode>
+//         <h1>Student</h1>
+//       </React.StrictMode>
+//     );
+//   }
+// }
+
+// export { Index };
+export default Index;

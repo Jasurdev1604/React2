@@ -1,5 +1,5 @@
 // import Lesson1 from "../lesson1";
-import Lesson2 from "../lesson2";
+import Lesson2 from "../lesson2/root";
 
 import React, { Component } from "react";
 
