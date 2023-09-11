@@ -9,6 +9,7 @@ export default class index extends Component {
       data: students,
       name: "",
       surname: "",
+      search: "id",
     };
   }
   render() {
@@ -30,8 +31,23 @@ export default class index extends Component {
       ];
       this.setState({ data: res, name: "", surname: "" });
     };
+    const filter = ({ target: { value } }) => {
+      let res = students.filter((v) =>
+        `${v[this.state.search]}`.toLowerCase().includes(value.toLowerCase())
+      );
+      this.setState({ data: res });
+    };
+    const onSelect = (e) => {
+      this.setState({ search: e.target.value });
+    };
     return (
       <React.StrictMode>
+        <input type="text" onChange={filter} placeholder="search" />
+        <select name="" onChange={onSelect} id="">
+          <option value="id">id</option>
+          <option value="name">name</option>
+          <option value="surname">surname</option>
+        </select>
         <table border={1}>
           <thead>
             <tr>
@@ -77,7 +93,7 @@ export default class index extends Component {
                       <button onClick={() => onDel(id)}>delete</button>
                     </td>
                     <td>
-                      <button onClick={""}>edit</button>
+                      <button>edit</button>
                     </td>
                   </tr>
                 );
