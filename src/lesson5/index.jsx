@@ -10,6 +10,7 @@ export default class index extends Component {
       name: "",
       surname: "",
       search: "id",
+      active: null,
     };
   }
   render() {
@@ -39,6 +40,9 @@ export default class index extends Component {
     };
     const onSelect = (e) => {
       this.setState({ search: e.target.value });
+    };
+    const onEdit = ({ id, name, surname }) => {
+      this.setState({ active: { id, name, surname } });
     };
     return (
       <React.StrictMode>
@@ -93,7 +97,9 @@ export default class index extends Component {
                       <button onClick={() => onDel(id)}>delete</button>
                     </td>
                     <td>
-                      <button>edit</button>
+                      <button onClick={() => onEdit(id, name, surname)}>
+                        edit
+                      </button>
                     </td>
                   </tr>
                 );
