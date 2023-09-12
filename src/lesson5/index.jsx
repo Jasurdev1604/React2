@@ -41,8 +41,17 @@ export default class index extends Component {
     const onSelect = (e) => {
       this.setState({ search: e.target.value });
     };
-    const onEdit = ({ id, name, surname }) => {
+    const onEdit = (id, name, surname) => {
       this.setState({ active: { id, name, surname } });
+    };
+    const onSaveChange = ({ target: { value, name } }) => {
+      this.setState({ active: { ...this.state.active, [name]: value } });
+    };
+    const onSave = (id) => {
+      let res = this.state.data.map((e) =>
+        e.id === id ? this.state.active : e
+      );
+      this.setState({ data: res, active: null });
     };
     return (
       <React.StrictMode>
@@ -91,15 +100,48 @@ export default class index extends Component {
                 return (
                   <tr key={id}>
                     <td>{id}</td>
-                    <td>{name}</td>
-                    <td>{surname}</td>
+                    <td>
+                      {id === this.state.active?.id ? (
+                        <input
+                          type="text"
+                          onChange={onSaveChange}
+                          name="name"
+                          defaultValue={name}
+                        />
+                      ) : (
+                        name
+                      )}
+                    </td>
+                    <td>
+                      {id === this.state.active?.id ? (
+                        <input
+                          onChange={onSaveChange}
+                          type="text"
+                          name="surname"
+                          defaultValue={surname}
+                        />
+                      ) : (
+                        surname
+                      )}
+                    </td>
                     <td>
                       <button onClick={() => onDel(id)}>delete</button>
                     </td>
                     <td>
-                      <button onClick={() => onEdit(id, name, surname)}>
-                        edit
-                      </button>
+                      {id === this.state.active?.id ? (
+                        <>
+                          <button onClick={() => onSave(id)}>save</button>
+                          <button
+                            onClick={() => this.setState({ active: null })}
+                          >
+                            cancle
+                          </button>
+                        </>
+                      ) : (
+                        <button onClick={() => onEdit(id, name, surname)}>
+                          edit
+                        </button>
+                      )}
                     </td>
                   </tr>
                 );
