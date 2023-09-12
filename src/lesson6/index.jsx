@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import Crud from "./Crud";
+import App from "./App";
 
 export default class index extends Component {
   render() {
     return (
       <React.StrictMode>
-        <Crud />
+        {/* <Crud /> */}
+        <App />
       </React.StrictMode>
     );
   }
