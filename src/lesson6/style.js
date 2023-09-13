@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 const Container = styled("div")`
   background-color: coral;
@@ -6,6 +6,7 @@ const Container = styled("div")`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin: 20px;
 `;
 
 const common = css`
@@ -56,4 +57,45 @@ const Box = styled.div`
   color: #fff;
 `;
 
-export { Container, Title, Box, Desc };
+const Button = styled.div`
+  width: 200px;
+  height: 40px;
+  background: black;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  &:active {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  border-radius: 5px;
+`;
+
+const ActiveButton = styled(Button)`
+  height: 50px;
+  background: blue;
+`;
+
+const rotate = keyframes`
+  from{
+    transform: rotate(0deg);
+  } to{
+    transform: rotate(360deg);
+  }
+`;
+
+const Rotate = styled.div`
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: cyan;
+  border: 2px solid blue;
+  animation: ${rotate} 0.1s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export { Container, Title, Box, Desc, Button, ActiveButton, Rotate };
