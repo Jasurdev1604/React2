@@ -90,3 +90,30 @@ const Rotate = styled.div`
 <Rotate>Rotate</Rotate>;
 
 //!theme
+
+import { ThemeProvider, createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background: ${(props) => props.theme.bg};
+    color: ${(props) => props.theme.cl};
+  }
+`;
+
+state = {
+  light: false,
+};
+
+const theme = {
+  bg: this.state.light ? "white" : "black",
+  cl: this.state.light ? "black" : "white",
+};
+
+<>
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <button onClick={() => this.setState({ light: !this.state.light })}>
+      change theme
+    </button>
+  </ThemeProvider>
+</>;
