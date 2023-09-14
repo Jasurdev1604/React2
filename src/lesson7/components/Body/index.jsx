@@ -1,17 +1,16 @@
 import React, { Component } from "react";
 import { Container } from "./style";
+import Card from "./Card";
+import { data } from "../../utils/mock";
 
 export default class index extends Component {
   render() {
     return (
       <React.StrictMode>
         <Container>
-          <h1>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-            voluptatum non perspiciatis obcaecati, velit ipsum sunt ad numquam
-            dolore ipsa laudantium earum illum beatae assumenda aspernatur id
-            consequatur porro odit!
-          </h1>
+          {data.map(({ user, title, view, time }) => (
+            <Card user={user} all={{ title, view, time }} />
+          ))}
         </Container>
       </React.StrictMode>
     );

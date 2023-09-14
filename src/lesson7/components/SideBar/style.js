@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 300px;
-  height: 600px;
+  width: 220px;
+  height: calc(100vh - 56px);
   overflow-y: auto;
   &::-webkit-scrollbar {
     width: 2px;

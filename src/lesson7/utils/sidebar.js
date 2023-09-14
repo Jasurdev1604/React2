@@ -112,7 +112,7 @@ export const sidebar = [
   },
   {
     id: 4,
-    title: "More from YouTube",
+    title: "More",
     data: [
       {
         id: 1,
