@@ -3,17 +3,16 @@ import { Container, Poster, User, Wrapper, Title, Cover } from "./style";
 
 export default class index extends Component {
   render() {
-    const { poster, img, name } = this.props.user;
-    const { title, view, time } = this.props.all;
+    const { user, title, view, time } = this.props.data;
     return (
       <Container>
-        <Poster src={poster} />
+        <Poster src={user.poster || "none"} />
         <Wrapper>
-          <User src={img} />
+          <User src={user.img} />
           <Cover>
-            <Title title>{title}</Title>
-            <Title>{name}</Title>
-            <Wrapper inline>
+            <Title title="true">{title}</Title>
+            <Title>{user.name}</Title>
+            <Wrapper inline="true">
               <Title>{view}</Title>
               <Title>{time}</Title>
             </Wrapper>

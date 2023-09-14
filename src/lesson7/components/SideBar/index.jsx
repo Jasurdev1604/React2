@@ -9,9 +9,9 @@ export default class index extends Component {
         <Container>
           {sidebar.map(({ id, title, data }) => (
             <Wrapper key={id}>
-              {title && <Title title>{title}</Title>}
+              {title && <Title title="true">{title}</Title>}
               {data.map(({ Icon: Icons, title: subTitle }) => (
-                <ItemWrapper>
+                <ItemWrapper key={id}>
                   <Icons />
                   <Title>{subTitle}</Title>
                 </ItemWrapper>

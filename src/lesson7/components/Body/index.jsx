@@ -1,16 +1,20 @@
 import React, { Component } from "react";
 import { Container } from "./style";
 import Card from "./Card";
-import { data } from "../../utils/mock";
 
 export default class index extends Component {
   render() {
+    const { data } = this.props;
     return (
       <React.StrictMode>
         <Container>
-          {data.map(({ user, title, view, time }) => (
-            <Card user={user} all={{ title, view, time }} />
-          ))}
+          {data.length ? (
+            data.map(({ user, title, view, time, id }) => (
+              <Card key={id} data={{ user, title, view, time }} />
+            ))
+          ) : (
+            <h1>none</h1>
+          )}
         </Container>
       </React.StrictMode>
     );
