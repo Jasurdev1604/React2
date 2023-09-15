@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import Navbar from "./Navbar";
+import Body from "./Body";
+import StudentsList from "./context";
 
 const index = () => {
   return (
     <React.Fragment>
-      <h1>index</h1>
+      <StudentsList>
+        <Navbar />
+        <Body />
+      </StudentsList>
     </React.Fragment>
   );
 };
