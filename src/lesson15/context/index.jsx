@@ -1,10 +1,10 @@
 import React from "react";
-import StudentsList from "./StudentsContext";
+import CounterC from "./context";
 
 export default function Context({ children }) {
   return (
     <React.Fragment>
-      <StudentsList>{children}</StudentsList>
+      <CounterC>{children}</CounterC>
     </React.Fragment>
   );
 }
