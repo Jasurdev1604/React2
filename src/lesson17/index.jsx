@@ -1,9 +1,11 @@
 import React from "react";
+import Navbar from "./components/Navbar";
 
 export default function index() {
+  console.log("root render");
   return (
     <React.Fragment>
-      <h1>Jasurbek</h1>
+      <Navbar />
     </React.Fragment>
   );
 }
