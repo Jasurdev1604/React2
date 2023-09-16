@@ -1,15 +1,15 @@
 import React from "react";
-import StudentsList from "./context";
 import Navbar from "./components/Navbar";
 import Body from "./components/Body";
+import Context from "./context";
 
 export default function Index() {
   return (
     <React.StrictMode>
-      <StudentsList>
+      <Context>
         <Navbar />
         <Body />
-      </StudentsList>
+      </Context>
     </React.StrictMode>
   );
 }

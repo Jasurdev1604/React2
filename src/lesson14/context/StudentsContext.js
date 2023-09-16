@@ -1,6 +1,8 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useContext } from "react";
 
 export const StudentsContext = createContext();
+
+export const Student = useContext(StudentsContext);
 
 const StudentsList = ({ children }) => {
   const [students, setStudents] = useState([
@@ -15,6 +17,7 @@ const StudentsList = ({ children }) => {
     let res = students.filter((v) => v.id !== id);
     setStudents(res);
   };
+
   return (
     <StudentsContext.Provider value={{ students, onDelate }}>
       {children}

@@ -1,8 +1,8 @@
-import React, { useContext, useState } from "react";
-import { StudentsContext } from "../context";
+import React from "react";
+import { Student } from "../context/StudentsContext";
 
 export default function Body() {
-  const data = useContext(StudentsContext);
+  const data = Student();
   console.log(data.students);
   return (
     <React.StrictMode>

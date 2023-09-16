@@ -87,7 +87,7 @@
 // 	- how to make general context
 // 	- useReducer with useContext
 
-//! 15-dars
+//! 16-dars
 // 	- LocalStorage
 // 	- localStorage.setItem(name,value)
 // 	- localStorage.getItem(name)
@@ -97,18 +97,18 @@
 // 	- JSON.stringify(value)
 // 	- JSON.parse(localStorage.getItem('count'))
 
-//! 16-dars
+//! 17-dars
 // 	- react optimization
 // 	- memo => child component, trigger re-render
 // 	- memo vs useMome()
 // 	- useMemo = > return value
 // 	- useCallback vs useMemo
 
-//! 17-dars
+//! 18-dars
 // 	- useRef?
 // 	- controlled vs Uncontrolled
 
-//! 18-dars
+//! 19-dars
 // 	- restfull API
 // 	- fetch?
 // 	- endpoint, url,api, link
@@ -119,14 +119,14 @@
 // 	- auth => authorization
 // 	- 200 -> 201 -> 401 -> 404 -> 415 -> 500
 
-//! 19-dars
+//! 20-dars
 // 	- axios
 // 	- fetch vs axios
 // 	- vanilla js vs 3rd part library
 // 	- manually vs automatic => data transform
 // 	- npm- install whatwg-fetch --save polyfill for-fetch
 
-//! 20-dars
+//! 21-dars
 // 	- React Router DOM 5
 // 	- BrowserRouter
 // 	- Navlink, Link
@@ -137,7 +137,7 @@
 // 	- privateRoute
 // 	- redirect
 
-//! 21-dars
+//! 22-dars
 // 	- React Router DOM 6
 // 	- redirect -> navigate
 // 	- useHistory -> useNavigate
@@ -149,13 +149,13 @@
 // 	- privateRoute
 // 	- optimal navbar yasash
 
-//! 22-dars
+//! 23-dars
 // 	- HOC
 // 	- High Order Components
 // 	- const Function = (Component) => {
 // 	- const WithCounter =()=>{<Component/>} return Function }
 
-//! 23-dars
+//! 24-dars
 // 	- React 18V
 // 	- batching
 // 	- startTransition
@@ -166,10 +166,8 @@
 // 	- useSyncExternalStore()
 // 	- useInsertionEffect()
 
-//! 24-dars
-// 	- Portals
-
 //! 25-dars
+// 	- Portals
 // 	- Profilers
 // 	-Lazy load
 
@@ -177,19 +175,7 @@
 // 	- AntDesign
 // 	- Material UI(MUI)
 
-//! 27-dars -- Recording, coming soon  | Bonus
-// 	- react-query
-
-//! 28-dars — Recording, coming soon | Bonus
-// 	- React Charts
-// 	- Biz Chart
-// 	- Victory chart
-
-//! 29-dars — Recording, coming soon  | Bonus
-// 	- google maps
-// 	- yandex-maps
-
-//! 30-dars — On YouTube | Bonus
+//! 27-dars — On YouTube | Bonus
 // 	- React Interview Questions
 // 	https://www.youtube.com/watch?v=4z4Ice4DdAQ&t=101s
 // 	https://www.youtube.com/watch?v=n-G92w6547M&t=688s

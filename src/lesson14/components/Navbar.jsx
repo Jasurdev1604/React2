@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import { StudentsContext } from "../context";
+import React from "react";
+import { Student } from "../context/StudentsContext";
 
 export default function Navbar() {
-  const data = useContext(StudentsContext);
+  const data = Student();
   return (
     <React.StrictMode>
       <div
