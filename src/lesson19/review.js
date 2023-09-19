@@ -14,5 +14,8 @@
 
 //!Error types
 
+//200 =>
+//201 =>
 //404 => notog'ri api ga request jonatilganda
 //401 => login qilmasdan malumotlar olish jarayonida
+//500 => backenddan muammo bolsa server error

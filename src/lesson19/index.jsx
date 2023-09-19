@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function index() {
   const getUser = (id) => {
@@ -17,25 +17,34 @@ export default function index() {
 
   const [students, setStudents] = useState([]);
   const [selected, setSelected] = useState([]);
-  const [login, setLogin] = useState("");
-  const [password, setSetpassword] = useState("");
+  const [house, setHouse] = useState([]);
 
+  const emailRef = useRef();
+  const pwRef = useRef();
   const onLogin = () => {
     fetch("http://localhost:8080/api/public/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: localStorage.getItem("token"),
       },
-      body: JSON.stringify({ email: login, password }),
-    }).then((res) => res.json());
+      body: JSON.stringify({
+        email: emailRef.current.value,
+        password: pwRef.current.value,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) =>
+        localStorage.setItem("token", `Bearer ${res.authenticationToken}`)
+      );
   };
 
-  const onChangeL = ({ target: { value, placeholder } }) => {
-    setLogin(value);
+  const getData = () => {
+    fetch("http://localhost:8080/api/v1/houses")
+      .then((res) => res.json())
+      .then((res) => console.log(res));
   };
-  const onChangeP = ({ target: { value, placeholder } }) => {
-    setSetpassword(value);
-  };
+
   return (
     <React.Fragment>
       <h1>Restful API</h1>
@@ -62,9 +71,22 @@ export default function index() {
         </div>
       </div>
       <hr />
-      <input type="text" onChange={onChangeL} placeholder="login" />
-      <input type="text" onChange={onChangeP} placeholder="password" />
+      <input
+        type="text"
+        ref={emailRef}
+        value={"jasurdev1604@gmail.com"}
+        placeholder="login"
+      />
+      <input
+        type="text"
+        ref={pwRef}
+        value={"Jasurbek2004"}
+        placeholder="password"
+      />
       <button onClick={onLogin}>login</button>
+      <hr />
+      <button onClick={getData}>getData</button>
+      <div></div>
     </React.Fragment>
   );
 }
