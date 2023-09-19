@@ -8,3 +8,6 @@
 // 	- token
 // 	- auth => authorization
 // 	- 200 -> 201 -> 401 -> 404 -> 415 -> 500
+
+//!fetch => js building functioni backenddan malumot olib kelish uchun
+//!endpion, url, api, link => backendan malumot olib kelish uchun link
