@@ -11,3 +11,8 @@
 
 //!fetch => js building functioni backenddan malumot olib kelish uchun
 //!endpion, url, api, link => backendan malumot olib kelish uchun link
+
+//!Error types
+
+//404 => notog'ri api ga request jonatilganda
+//401 => login qilmasdan malumotlar olish jarayonida
