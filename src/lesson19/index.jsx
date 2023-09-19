@@ -1,53 +1,54 @@
 import React, { useEffect, useRef, useState } from "react";
+import Crud from "./Crud";
 
 export default function index() {
-  const getUser = (id) => {
-    return fetch(
-      `https://jsonplaceholder.typicode.com/users/${id ? id : ""}`
-    ).then((res) => res.json());
-  };
+  // const getUser = (id) => {
+  //   return fetch(
+  //     `https://jsonplaceholder.typicode.com/users/${id ? id : ""}`
+  //   ).then((res) => res.json());
+  // };
 
-  useEffect(() => {
-    getUser().then((res) => setStudents(res));
-  }, []);
+  // useEffect(() => {
+  //   getUser().then((res) => setStudents(res));
+  // }, []);
 
-  const getInfo = (id) => {
-    getUser(id).then((res) => setSelected(res));
-  };
+  // const getInfo = (id) => {
+  //   getUser(id).then((res) => setSelected(res));
+  // };
 
-  const [students, setStudents] = useState([]);
-  const [selected, setSelected] = useState([]);
-  const [house, setHouse] = useState([]);
+  // const [students, setStudents] = useState([]);
+  // const [selected, setSelected] = useState([]);
+  // const [house, setHouse] = useState([]);
 
-  const emailRef = useRef();
-  const pwRef = useRef();
-  const onLogin = () => {
-    fetch("http://localhost:8080/api/public/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: localStorage.getItem("token"),
-      },
-      body: JSON.stringify({
-        email: emailRef.current.value,
-        password: pwRef.current.value,
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) =>
-        localStorage.setItem("token", `Bearer ${res.authenticationToken}`)
-      );
-  };
+  // const emailRef = useRef();
+  // const pwRef = useRef();
+  // const onLogin = () => {
+  //   fetch("http://localhost:8080/api/public/auth/login", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: localStorage.getItem("token"),
+  //     },
+  //     body: JSON.stringify({
+  //       email: emailRef.current.value,
+  //       password: pwRef.current.value,
+  //     }),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((res) =>
+  //       localStorage.setItem("token", `Bearer ${res.authenticationToken}`)
+  //     );
+  // };
 
-  const getData = () => {
-    fetch("http://localhost:8080/api/v1/houses")
-      .then((res) => res.json())
-      .then((res) => console.log(res));
-  };
+  // const getData = () => {
+  //   fetch("http://localhost:8080/api/v1/houses")
+  //     .then((res) => res.json())
+  //     .then((res) => console.log(res));
+  // };
 
   return (
     <React.Fragment>
-      <h1>Restful API</h1>
+      {/* <h1>Restful API</h1>
       <h1>Students List</h1>
       <div
         style={{
@@ -86,7 +87,8 @@ export default function index() {
       <button onClick={onLogin}>login</button>
       <hr />
       <button onClick={getData}>getData</button>
-      <div></div>
+      <div></div> */}
+      <Crud />
     </React.Fragment>
   );
 }
