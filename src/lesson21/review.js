@@ -10,9 +10,7 @@
 // 	- redirect
 
 //! yarn add react-router-dom@5
-//!BrowserRouter =>
-//!NavLink , Link =>
-//!Route =>
-//!useHistory =>
-//!useLocation =>
-//!Switch =>
+//!BrowserRouter => rootni orab qoyish uchun ishlatiladi , oralmasa router dom ishlamaydi
+//!NavLink , Link => anchor tag xoosaiga ega link
+//!Route => <Route path={'home'} component = {Home}/> pagelar
+//!Switch => Routlarni orab tusrish uchun ishllatiladi`
