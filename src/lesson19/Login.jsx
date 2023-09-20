@@ -20,19 +20,26 @@ export default function Crud() {
 
   const emailRef = useRef("");
   const passwordRef = useRef("");
+
   return (
     <React.Fragment>
-      <h1>Crud</h1>
-      <hr />
       <h2>Login</h2>
       <div>
         <span>
           email{" "}
-          <input ref={emailRef} defaultValue={"j@gmail.com"} type="text" />
+          <input
+            ref={emailRef}
+            defaultValue={"jasurdev1604@gmail.com"}
+            type="text"
+          />
         </span>
         <span>
           passoword{" "}
-          <input ref={passwordRef} defaultValue={"jasur"} type="password" />
+          <input
+            ref={passwordRef}
+            defaultValue={"Jasurbek2004"}
+            type="password"
+          />
         </span>
         <button onClick={getUsers}>login</button>
         <button onClick={() => localStorage.clear()}>logout</button>

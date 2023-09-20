@@ -18,4 +18,5 @@
 //201 =>
 //404 => notog'ri api ga request jonatilganda
 //401 => login qilmasdan malumotlar olish jarayonida
+//405 => un supported media type , Content-Type yozilmasa
 //500 => backenddan muammo bolsa server error
