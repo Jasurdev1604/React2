@@ -10,22 +10,28 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Link = styled.div`
+const Link = styled(NavLink)`
   color: #fff;
   font-weight: 600;
   font-size: 25px;
   cursor: pointer;
+  text-decoration: none;
+  &.active {
+    color: coral;
+  }
 `;
 
 export default function index() {
   return (
     <React.Fragment>
       <Container>
-        <Link>Logo</Link>
-        <Link>Home</Link>
-        <Link>Templates</Link>
-        <Link>Elements</Link>
-        <Link>Contact</Link>
+        <Link to={"/"} exact>
+          Logo
+        </Link>
+        <Link to={"/home"}>Home</Link>
+        <Link to={"/templates"}>Templates</Link>
+        <Link to={"/info"}>Info</Link>
+        <Link to={"/contacts"}>Contact</Link>
       </Container>
     </React.Fragment>
   );
