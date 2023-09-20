@@ -7,7 +7,6 @@ export default function Crud() {
     fetch("http://localhost:8080/api/public/auth/login", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
       body: JSON.stringify({
@@ -18,14 +17,11 @@ export default function Crud() {
       .then((res) => res.json())
       .then((res) => localStorage.setItem("token", res.authenticationToken));
   };
-  const getData = () => {
-    fetch("http://localhost:8080/api/v1/houses/me")
-      .then((res) => res.json())
-      .then((res) => console.log(res));
-  };
   return (
     <React.Fragment>
       <h1>Crud</h1>
+      <hr />
+      <h2>Login</h2>
       <input
         type="text"
         placeholder="email"
@@ -39,8 +35,7 @@ export default function Crud() {
         ref={pwRef}
       />
       <button onClick={onLogin}>login</button>
-      <hr />
-      <button onClick={getData}>getData</button>
+      <button onClick={() => localStorage.clear()}>log out</button>
     </React.Fragment>
   );
 }
