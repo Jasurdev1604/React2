@@ -9,3 +9,6 @@
 // 	- usePrams
 // 	- privateRoute
 // 	- optimal navbar yasash
+
+//!useNavigate => javaScritp ishlatiladi
+//!Navigate => element sifatida ishlatoladi

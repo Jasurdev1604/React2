@@ -27,9 +27,6 @@ export const index = () => {
   return (
     <React.Fragment>
       <Container>
-        <Link to={"/"} exact={"true"}>
-          Logo
-        </Link>
         {navbar.map(({ id, title, path }) => {
           return (
             <Link key={id} to={path}>
@@ -37,10 +34,6 @@ export const index = () => {
             </Link>
           );
         })}
-        {/* <Link to={"/home"}>Home</Link>
-        <Link to={"/about"}>About</Link>
-        <Link to={"/contact"}>Contact</Link>
-        <Link to={"/templates"}>Templates</Link> */}
       </Container>
       <Outlet />
     </React.Fragment>
