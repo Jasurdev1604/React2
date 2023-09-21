@@ -1,5 +1,5 @@
 import React from "react";
-import UpdatedWith from "./withCounter";
+import Updated from "./withCounter";
 export const Hoover = ({ count, setCount }) => {
   return (
     <div>
@@ -9,4 +9,4 @@ export const Hoover = ({ count, setCount }) => {
   );
 };
 
-export default UpdatedWith(Hoover);
+export default Updated(Hoover);
