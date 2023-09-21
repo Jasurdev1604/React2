@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Outlet } from "react-router-dom";
+import { navbar } from "../../utils/navbar.js";
 
 const Container = styled.div`
   display: flex;
@@ -26,13 +27,20 @@ export const index = () => {
   return (
     <React.Fragment>
       <Container>
-        <Link to={"/"} exact>
+        <Link to={"/"} exact={"true"}>
           Logo
         </Link>
-        <Link to={"/home"}>Home</Link>
+        {navbar.map(({ id, title, path }) => {
+          return (
+            <Link key={id} to={path}>
+              {title}
+            </Link>
+          );
+        })}
+        {/* <Link to={"/home"}>Home</Link>
         <Link to={"/about"}>About</Link>
         <Link to={"/contact"}>Contact</Link>
-        <Link to={"/templates"}>Templates</Link>
+        <Link to={"/templates"}>Templates</Link> */}
       </Container>
       <Outlet />
     </React.Fragment>
