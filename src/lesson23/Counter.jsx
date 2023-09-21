@@ -1,13 +1,13 @@
 import React from "react";
-import Updated from "./withCounter";
+import UpdatedWith from "./withCounter";
 
-export const Counter = ({ count, setCount }) => {
+function Counter({ count, setCount }) {
   return (
-    <div>
-      <h1>Counter </h1>
-      <button onClick={setCount}>clicked {count} times</button>
-    </div>
+    <React.Fragment>
+      <h1>Counter</h1>
+      <button onClick={setCount}>click {count} times</button>
+    </React.Fragment>
   );
-};
+}
 
-export default Updated(Counter);
+export default UpdatedWith(Counter);
