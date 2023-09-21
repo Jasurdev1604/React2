@@ -1,6 +1,6 @@
-import React, { useState, useTransition } from "react";
+import React, { Suspense, useState, useTransition } from "react";
 // import { flushSync } from "react-dom";
-import List from "./List";
+const List = React.lazy(() => import("./List"));
 
 export default function index() {
   // const [counter, setCounter] = useState(0);
@@ -45,7 +45,7 @@ export default function index() {
         {counter} {state} son
       </h2> */}
       <input type="text" value={value} onChange={onChange} />
-      <List value={value} />
+      {/* <List value={value} /> */}
       {/* {isPending ? (
         <h1>...loading</h1>
       ) : (
@@ -53,6 +53,10 @@ export default function index() {
           return <h1>{e}</h1>;
         })
       )} */}
+
+      <Suspense fallback={<h1>loading</h1>}>
+        <List />
+      </Suspense>
     </React.Fragment>
   );
 }

@@ -1,19 +1,29 @@
-import React, { useDeferredValue, useMemo } from "react";
+import React, { useDeferredValue, useEffect, useId, useMemo } from "react";
 
 export const List = ({ value }) => {
-  const defValue = useDeferredValue(value);
+  const id = useId();
 
-  const list = useMemo(() => {
-    let l = [];
-    for (let i = 0; i < 2000; i++) {
-      l.push(`${defValue}`);
-    }
-    return l;
-  }, [defValue]);
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users").then((res) =>
+      res.json()
+    );
+  });
 
-  const isPending = value !== defValue;
+  //   const defValue = useDeferredValue(value);
 
-  return isPending ? <h1>loading</h1> : list;
+  //   const list = useMemo(() => {
+  //     let l = [];
+  //     for (let i = 0; i < 2000; i++) {
+  //       l.push(`${defValue}`);
+  //     }
+  //     return l;
+  //   }, [defValue]);
+
+  //   const isPending = value !== defValue;
+
+  //   return isPending ? <h1>loading</h1> : list;
+
+  return <h1> {id} Data loading</h1>;
 };
 
 export default List;

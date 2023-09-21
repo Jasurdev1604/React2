@@ -9,7 +9,7 @@
 // 	- useSyncExternalStore()
 // 	- useInsertionEffect()
 
-import { useTransition } from "react";
+import { useId, useTransition } from "react";
 
 //!Batching => har bir state o'zgarishiga alohoda emas balki barcha state o'zgarishiga bitta componentni re-render qilib beradi
 
@@ -46,3 +46,18 @@ export const List = ({ value }) => {
 
   return isPending ? <h1>loading</h1> : list;
 };
+
+//! Suspense => fetch ishlab bolguncha kutadi
+
+const List = React.lazy(() => import("./List"));
+
+<Suspense fallback={<h1>loading</h1>}>
+  <List />
+</Suspense>;
+
+//!useId => unique id yasash uchun ishletidai
+
+const id = useId();
+console.log(id);
+
+//!useDebugValue
