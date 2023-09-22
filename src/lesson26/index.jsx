@@ -5,7 +5,11 @@ import MaterialUI from "./MaterialUI";
 export default function index() {
   return (
     <React.Fragment>
-      <div>
+      <div
+        style={{
+          display: "flex",
+        }}
+      >
         <AntDesign />
         <MaterialUI />
       </div>
