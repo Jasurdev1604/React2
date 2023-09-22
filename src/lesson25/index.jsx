@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import About from "./About";
 import Contact from "./Contact";
+import { Portal } from "./Portal";
 
 const Home = React.lazy(() => import("./Home"));
 
@@ -19,6 +20,7 @@ export default function index() {
     <React.Fragment>
       <BrowserRouter>
         <h1>Portals</h1>
+        <Portal />
         <Container>
           <NavLink to={"/home"}>Home</NavLink>
           <NavLink to={"/about"}>About</NavLink>
