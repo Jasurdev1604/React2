@@ -22,7 +22,8 @@
 // import Lesson22 from "../lesson22";
 // import Lesson23 from "../lesson23";
 // import Lesson24 from "../lesson24";
-import Lesson25 from "../lesson25";
+// import Lesson25 from "../lesson25";
+import Lesson26 from "../lesson26";
 
 import React, { Component } from "react";
 
@@ -54,7 +55,8 @@ class Root extends Component {
         {/* <Lesson22 /> */}
         {/* <Lesson23 /> */}
         {/* <Lesson24 /> */}
-        <Lesson25 />
+        {/* <Lesson25 /> */}
+        <Lesson26 />
       </React.StrictMode>
     );
   }

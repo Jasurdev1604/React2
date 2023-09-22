@@ -1,9 +1,14 @@
 import React from "react";
+import AntDesign from "./AntDesign";
+import MaterialUI from "./MaterialUI";
 
 export default function index() {
   return (
     <React.Fragment>
-      <h1>index</h1>
+      <div>
+        <AntDesign />
+        <MaterialUI />
+      </div>
     </React.Fragment>
   );
 }
