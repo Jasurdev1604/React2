@@ -3,7 +3,9 @@
 // 	- Material UI(MUI)
 
 //!Antdesign and material ui -> compnent based librarys
+
+//!Ant design
 // yarn add antd
 
-//!material ui
+//!Material ui
 // yarn add @mui/material @mui/styled-engine-sc styled-components -> with styled componets
