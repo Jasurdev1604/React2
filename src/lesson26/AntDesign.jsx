@@ -6,29 +6,12 @@ export default function AntDesign() {
     <React.Fragment>
       <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
         <h1>AntDesign</h1>
-        <Space
-          direction="vertical"
-          style={{
-            width: "100%",
-          }}
-        >
-          <Button type="primary" block>
-            Primary
-          </Button>
-          <Button block>Default</Button>
-          <Button type="dashed" block>
-            Dashed
-          </Button>
-          <Button disabled block>
-            disabled
-          </Button>
-          <Button type="text" block>
-            text
-          </Button>
-          <Button type="link" block>
-            Link
-          </Button>
-        </Space>
+        <Button danger={true} type="primary">
+          Primary
+        </Button>
+        <Button loading={true} type="default">
+          loading
+        </Button>
       </div>
     </React.Fragment>
   );
